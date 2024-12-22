@@ -18,7 +18,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 application {
-    mainModule.set("edu.tyut.template")
+    mainModule.set("template")
     mainClass.set("edu.tyut.template.HelloApplicationKt")
 }
 

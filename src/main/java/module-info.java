@@ -1,4 +1,4 @@
-module edu.tyut.template {
+module template {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
