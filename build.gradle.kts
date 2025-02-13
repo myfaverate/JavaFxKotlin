@@ -1,13 +1,13 @@
 plugins {
     application
-    kotlin("jvm") version "2.0.21"
-    id(id = "org.javamodularity.moduleplugin") version "1.8.12"
-    id(id = "org.openjfx.javafxplugin") version "0.0.13"
-    id(id = "org.beryx.jlink") version "3.1.1"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.module.plugin)
+    alias(libs.plugins.javafx.plugin)
+    alias(libs.plugins.beryx.jlink)
 }
 
 group = "edu.tyut"
-version = "1.0"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -32,25 +32,24 @@ javafx {
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.2.1")
-    implementation("com.dlsc.formsfx:formsfx-core:11.6.0") {
+    implementation(libs.org.controlsfx)
+    implementation(libs.formsfx.core) {
         exclude(group = "org.openjfx")
     }
-    implementation("net.synedra:validatorfx:0.5.0") {
+    implementation(libs.validatorfx) {
         exclude(group = "org.openjfx")
     }
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
-    implementation("org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0")
-    implementation("eu.hansolo:tilesfx:21.0.3") {
+    implementation(libs.ikonli.javafx)
+    implementation(libs.bootstrapfx.core)
+    implementation(libs.tilesfx) {
         exclude(group = "org.openjfx")
     }
-    implementation("com.github.almasb:fxgl:17.3") {
+    implementation(libs.fxgl) {
         exclude(group = "org.openjfx")
         exclude(group = "org.jetbrains.kotlin")
     }
-    val junitVersion = "5.10.2"
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 }
 
 tasks.test {

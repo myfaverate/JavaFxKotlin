@@ -1,0 +1,37 @@
+# Version catalog is a central place for you to declare and version dependencies
+# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
+# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
+
+[versions]
+kotlin = "2.1.0"
+modulePluginVersion = "1.8.12"
+javafxPluginVersion = "0.0.13"
+beryxJlinkVersion = "3.1.1"
+
+controlsfxVersion = "11.2.1"
+formsfxCoreVersion = "11.6.0"
+validatorfxVersion = "0.5.0"
+ikonliJavafxVersion = "12.3.1"
+bootstrapfxCoreVersion = "0.4.0"
+tilesfxVersion = "21.0.3"
+fxglVersion = "17.3"
+junitVersion = "5.10.2"
+
+[libraries]
+org-controlsfx = { module = "org.controlsfx:controlsfx", version.ref = "controlsfxVersion" }
+formsfx-core = { module = "com.dlsc.formsfx:formsfx-core", version.ref = "formsfxCoreVersion" }
+validatorfx = { module = "net.synedra:validatorfx", version.ref = "validatorfxVersion" }
+ikonli-javafx = { module = "org.kordamp.ikonli:ikonli-javafx", version.ref = "ikonliJavafxVersion" }
+bootstrapfx-core = { module = "org.kordamp.bootstrapfx:bootstrapfx-core", version.ref = "bootstrapfxCoreVersion" }
+tilesfx = { module = "eu.hansolo:tilesfx", version.ref = "tilesfxVersion" }
+fxgl = { module = "com.github.almasb:fxgl", version.ref = "fxglVersion" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitVersion" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitVersion" }
+# Libraries can be bundled together for easier import
+[bundles]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+module-plugin = { id = "org.javamodularity.moduleplugin", version.ref = "modulePluginVersion" }
+javafx-plugin = { id = "org.openjfx.javafxplugin", version.ref = "javafxPluginVersion" }
+beryx-jlink = { id = "org.beryx.jlink", version.ref = "beryxJlinkVersion" }
